@@ -171,6 +171,10 @@ public class DefaultServer extends BlockJUnit4ClassRunner {
     }
 
     private static SSLContext createSSLContext(final KeyStore keyStore, final KeyStore trustStore, boolean client) throws IOException {
+        return createSSLContext(keyStore, trustStore, "TLSv1.2", client);
+    }
+
+    private static SSLContext createSSLContext(final KeyStore keyStore, final KeyStore trustStore, String protocol, boolean client) throws IOException {
         KeyManager[] keyManagers;
         try {
             KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
@@ -194,7 +198,7 @@ public class DefaultServer extends BlockJUnit4ClassRunner {
             if(openssl && !client) {
                 sslContext = SSLContext.getInstance("openssl.TLS");
             } else {
-                sslContext = SSLContext.getInstance("TLS");
+                sslContext = SSLContext.getInstance(protocol);
             }
             sslContext.init(keyManagers, trustManagers, null);
         } catch (NoSuchAlgorithmException | KeyManagementException e) {
@@ -584,8 +588,12 @@ public class DefaultServer extends BlockJUnit4ClassRunner {
     }
 
     public static SSLContext createClientSslContext() {
+        return createClientSslContext("TLSv1.2");
+    }
+
+    public static SSLContext createClientSslContext(String protocol) {
         try {
-            return createSSLContext(loadKeyStore(CLIENT_KEY_STORE), loadKeyStore(CLIENT_TRUST_STORE), true);
+            return createSSLContext(loadKeyStore(CLIENT_KEY_STORE), loadKeyStore(CLIENT_TRUST_STORE), protocol, true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

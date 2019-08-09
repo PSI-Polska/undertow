@@ -95,9 +95,9 @@
         <version.io.undertow.build.checkstyle-config>1.0.1.Final</version.io.undertow.build.checkstyle-config>
         <version.com.github.spotbugs-maven-plugin>3.1.2</version.com.github.spotbugs-maven-plugin>
 
-        <jdk.min.version>1.7</jdk.min.version>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.source>1.7</maven.compiler.source>
+        <jdk.min.version>1.8</jdk.min.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
 
         <version.org.eclipse.jetty.alpn>1.1.3.v20160715</version.org.eclipse.jetty.alpn>
 
