@@ -30,7 +30,7 @@
 
     <groupId>io.undertow</groupId>
     <artifactId>undertow-dist</artifactId>
-    <version>1.4.27-1-PSI</version>
+    <version>1.4.27-2-PSI-SNAPSHOT</version>
 
     <name>Undertow: Distribution</name>
 

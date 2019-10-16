@@ -28,7 +28,7 @@
 
     <groupId>io.undertow</groupId>
     <artifactId>undertow-parent</artifactId>
-    <version>1.4.27-1-PSI</version>
+    <version>1.4.27-2-PSI-SNAPSHOT</version>
 
     <name>Undertow</name>
     <description>Undertow</description>
