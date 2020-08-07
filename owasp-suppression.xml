@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">	
+    <!--    Fixed: https://github.com/PSI-Polska/undertow/commit/ac30d071f116c649061c71744f01d6511fed2e7b -->
+    <suppress>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2019-10212</cve>
+    </suppress>
+
+    <!-- Fixed in 1.4.27-1-PSI (https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3888, commit: https://github.com/PSI-Polska/undertow/commit/e6b04b63d47a04e6bc6e04523cb6f9699d5924d0 based on https://github.com/undertow-io/undertow/pull/736) -->
+    <suppress>
+        <notes><![CDATA[file name: undertow-core-1.4.27-1-PSI.jar]]></notes>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2019-3888</cve>
+    </suppress>
+	
+    <!-- Fixed in 1.4.27-2-PSI-SNAPSHOT (https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10184, commit: https://github.com/PSI-Polska/undertow/commit/3448a4e0c7fe3c843db6bc7ebc7538c2be72a563 based on https://github.com/undertow-io/undertow/pull/794/commits/d2715e3afa13f50deaa19643676816ce391551e9) -->
+    <suppress>
+        <notes><![CDATA[file name: undertow-core-1.4.27-1-PSI.jar]]></notes>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2019-10184</cve>
+    </suppress>
+
+    <!-- Fixed in 1.4.27-3-PSI-SNAPSHOT (https://bugzilla.redhat.com/show_bug.cgi?id=1772464, COM_WILDFLY-281), commits: 39a4c19, 9e09dad -->
+    <suppress>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2019-14888</cve>
+    </suppress>	
+
+    <!-- Fixed in 1.4.27-3-PSI-SNAPSHOT (https://bugzilla.redhat.com/show_bug.cgi?id=1803241, COM_WILDFLY-288), commits: e0c1165, c5769b8, 97da309, 0c593a1 -->
+    <suppress>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2020-10705</cve>
+    </suppress>	
+
+    <!-- There is no fix for this issue in WF10 - there are workarounds; please check http://jira-bld-com.psi.de:8080/browse/COM_WILDFLY-285 -->
+    <suppress>
+        <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-.*@.*$</packageUrl>
+        <cve>CVE-2020-1745</cve>
+    </suppress>
+
+    <!-- Vulnerability concerns Java-WebSocket, not org.jboss.spec.javax.websocket:jboss-websocket-api_1.1_spec - false positive -->
+    <suppress>
+        <notes><![CDATA[file name: jboss-websocket-api_1.1_spec-1.1.1.Final.jar]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.jboss\.spec\.javax\.websocket/jboss\-websocket\-api_1\.1_spec@.*$</packageUrl>
+        <cve>CVE-2020-11050</cve>
+    </suppress>	
+	
+</suppressions>
